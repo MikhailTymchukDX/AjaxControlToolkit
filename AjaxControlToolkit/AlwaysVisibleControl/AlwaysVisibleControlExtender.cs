@@ -74,7 +74,7 @@ namespace AjaxControlToolkit {
 
         /// <summary>
         /// Length of the scrolling effectn seconds when the target control is repositioned.
-        /// The default is 1.
+        /// The default is .1.
         /// </summary>
         [ExtenderControlProperty()]
         [DefaultValue(0.1f)]

@@ -24,7 +24,7 @@ namespace AjaxControlToolkit {
         ListView _listView;
 
         /// <summary>
-        /// A Twitter Screen name used in Profile mode
+        /// Either Profile or Search mode.
         /// </summary>
         public TwitterMode Mode { get; set; }
 

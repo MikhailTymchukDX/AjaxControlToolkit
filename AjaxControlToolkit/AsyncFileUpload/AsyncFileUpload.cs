@@ -303,7 +303,7 @@ namespace AjaxControlToolkit {
         }
 
         /// <summary>
-        /// Clears all uploaded files of a current control from session.
+        /// Clears all uploaded files from session.
         /// </summary>
         public void ClearAllFilesFromPersistedStore() {
             PersistentStoreManager.Instance.ClearAllFilesFromSession(this.ClientID);

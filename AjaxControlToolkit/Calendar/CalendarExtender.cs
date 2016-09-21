@@ -36,7 +36,7 @@ namespace AjaxControlToolkit {
 
         /// <summary>
         /// A format string used to display the selected date.
-        /// The default value is d
+        /// The default value is "d"
         /// </summary>
         [DefaultValue("d")]
         [ExtenderControlProperty]
