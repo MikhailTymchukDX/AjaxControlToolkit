@@ -299,6 +299,9 @@ namespace AjaxControlToolkit {
             Directory.Delete(dir);
         }
 
+        /// <summary>
+        /// Deletes all uploaded files from temporary folder.
+        /// </summary>
         public static void CleanAllTemporaryData() {
             var dirInfo = new DirectoryInfo(BuildRootTempFolder());
             foreach(var dir in dirInfo.GetDirectories()) {

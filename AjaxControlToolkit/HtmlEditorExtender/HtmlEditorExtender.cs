@@ -50,6 +50,10 @@ namespace AjaxControlToolkit {
             EnableClientState = true;
         }
 
+        /// <summary>
+        /// A Sanitizer that performs HTML sanitization.
+        /// <remarks>null if not configured.</remarks>
+        /// </summary>
         public IHtmlSanitizer Sanitizer {
             get { return _sanitizer.Value; }
             set { _sanitizer = new Lazy<IHtmlSanitizer>(() => value, true); }
