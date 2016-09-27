@@ -59,8 +59,10 @@ namespace AjaxControlToolkit {
 
         /// <summary>
         /// Optional setting specifying the theme of balloon popup.
-        /// Default value is Rectangle
         /// </summary>
+        /// <remarks>
+        /// (Cloud, Rectangle, Custom) Default value is Rectangle
+        /// </remarks>
         [ExtenderControlProperty]
         [DefaultValue(BalloonPopupStyle.Rectangle)]
         [ClientPropertyName("balloonPopupStyle")]
@@ -154,8 +156,11 @@ namespace AjaxControlToolkit {
         }
 
         /// <summary>
-        /// Optional setting specifying the size of balloon popup. (Small, Medium and Large). Default value is Small
+        /// Optional setting specifying the size of balloon popup.
         /// </summary>
+        /// <remarks>
+        /// (Small, Medium and Large). Default value is Small
+        /// </remarks>
         [ExtenderControlProperty]
         [ClientPropertyName("balloonSize")]
         [DefaultValue(BalloonPopupSize.Small)]
@@ -183,8 +188,10 @@ namespace AjaxControlToolkit {
 
         /// <summary>
         /// Optional setting specifying whether to display scrollbar if contents are overflowing.
-        /// Default value is Auto
         /// </summary>
+        /// <remarks>
+        /// (None, Horizontal, Vertical, Both and Auto) Default value is Auto
+        /// </remarks>
         [DefaultValue(ScrollBars.Auto)]
         [Category("Behavior")]
         [ClientPropertyName("scrollBars")]
