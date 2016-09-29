@@ -22,26 +22,44 @@ namespace AjaxControlToolkit {
             get { return (HttpContext.Current == null); }
         }
 
+        /// <summary>
+        /// The width of the the chart.
+        /// </summary>
         [ExtenderControlProperty]
         [DefaultValue(null)]
         [ClientPropertyName("chartWidth")]
         public string ChartWidth { get; set; }
 
+        /// <summary>
+        /// The height of the the chart.
+        /// </summary>
         [ExtenderControlProperty]
         [DefaultValue(null)]
         [ClientPropertyName("chartHeight")]
         public string ChartHeight { get; set; }
 
+        /// <summary>
+        /// The title of the the chart.
+        /// </summary>
         [ExtenderControlProperty]
         [DefaultValue("")]
         [ClientPropertyName("chartTitle")]
         public string ChartTitle { get; set; }
 
+        /// <summary>
+        /// The font color of the chart title.
+        /// </summary>
         [ExtenderControlProperty]
         [DefaultValue("")]
         [ClientPropertyName("chartTitleColor")]
         public string ChartTitleColor { get; set; }
 
+        /// <summary>
+        /// A CSS file name for a chart.
+        /// </summary>
+        /// <remarks>
+        /// See corresponding client property for a default value.
+        /// </remarks>
         [ExtenderControlProperty]
         [DefaultValue("PieChart")]
         [ClientPropertyName("theme")]
