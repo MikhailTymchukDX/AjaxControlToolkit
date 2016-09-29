@@ -215,7 +215,7 @@ Sys.Extended.UI.PieChart.prototype = {
     },
 
     /// <summary>
-    /// A theme of the chart
+    /// A CSS file name for PieChart. The default is 'PieChart'.
     /// </summary>
     /// <getter>get_theme</getter>
     /// <setter>set_theme</setter>

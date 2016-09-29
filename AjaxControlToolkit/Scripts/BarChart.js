@@ -763,7 +763,7 @@ Sys.Extended.UI.BarChart.prototype = {
     },
 
     /// <summary>
-    /// Enables you to control the appearance of the bar chart with a Cascading Style Sheet file
+    /// A CSS file name for BarChart. The default value is 'BarChart'.
     /// </summary>
     /// <getter>get_theme</getter>
     /// <setter>set_theme</setter>

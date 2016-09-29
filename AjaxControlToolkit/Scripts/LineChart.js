@@ -557,7 +557,7 @@ Sys.Extended.UI.LineChart.prototype = {
     },
 
     /// <summary>
-    /// Enables you to control the appearance of a line chart with a CSS file
+    /// A CSS file name for LineChart. The default is 'LineChart'.
     /// </summary>
     /// <getter>get_theme</getter>
     /// <setter>set_theme</setter>

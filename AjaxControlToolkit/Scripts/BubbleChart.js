@@ -41,7 +41,7 @@ Sys.Extended.UI.BubbleChart = function(element) {
     this._bubbleChartClientValues = null;
 
     /// <summary>
-    /// Enables you to control the appearance of the bar chart with a CSS file.
+    /// A CSS file name for BarChart.
     /// The default is 'BubbleChart'
     /// </summary>
     /// <getter>get_theme</getter>
