@@ -54,12 +54,6 @@ namespace AjaxControlToolkit {
         [ClientPropertyName("chartTitleColor")]
         public string ChartTitleColor { get; set; }
 
-        /// <summary>
-        /// A CSS file name for a chart.
-        /// </summary>
-        /// <remarks>
-        /// See corresponding client property for a default value.
-        /// </remarks>
         [ExtenderControlProperty]
         [DefaultValue("PieChart")]
         [ClientPropertyName("theme")]
