@@ -17,6 +17,7 @@ namespace AjaxControlToolkit {
     /// </summary>
     [ClientCssResource(Constants.BubbleChartName)]
     [ClientScriptResource("Sys.Extended.UI.BubbleChart", Constants.BubbleChartName)]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.BubbleChartName + Constants.IconPostfix)]
     public class BubbleChart : ChartBase {
         List<BubbleChartValue> _values = new List<BubbleChartValue>();

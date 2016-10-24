@@ -185,6 +185,8 @@ Sys.Extended.UI.BubbleChart = function(element) {
     this.yInterval = 0;
     this.charLength = 3.5;
     this._divTooltip = null;
+    this._zOrdering = null;
+    this._controlTypeName = 'bubbleChartTooltip';
 }
 
 Sys.Extended.UI.BubbleChart.prototype = {
@@ -208,6 +210,7 @@ Sys.Extended.UI.BubbleChart.prototype = {
             this._bubbleSizes = 5;
         }
 
+        this._zOrdering = new Sys.Extended.UI.ZOrdering();
         this.generateTooltipDiv();
         this.generateBubbleChart();
     },
@@ -231,11 +234,18 @@ Sys.Extended.UI.BubbleChart.prototype = {
                     top: '0px',
                     color: this._tooltipFontColor,
                     visibility: 'hidden',
-                    zIndex: Sys.Extended.UI.zIndex.BubbleChartTooltip,
+                    zIndex: this._getTooltipZIndex(),
                     padding: '10px'
                 }
             }
         }, this._parentDiv);
+
+        this._divTooltip.setAttribute(this._zOrdering.getControlTypeAttributeName(), this._controlTypeName);
+    },
+
+    _getTooltipZIndex: function() {
+        var topTooltipZIndex = parseInt(this._zOrdering.findTopElement(this._controlTypeName));
+        return topTooltipZIndex ? parseInt(topTooltipZIndex + 1) : parseInt(Sys.Extended.UI.zIndex.BubbleChartTooltip);
     },
 
     generateBubbleChart: function() {
