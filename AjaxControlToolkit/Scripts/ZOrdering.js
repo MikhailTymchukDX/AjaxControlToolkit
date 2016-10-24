@@ -14,23 +14,21 @@ Sys.Extended.UI.ZOrdering.prototype = {
 
     findTopElement: function (controlType) {
         var actElements = this.getAllElementsWithAttribute('data-act-control-type');
-        var backgrounds = [];
+        var targetActElements = [];
 
         for(var i = 0; i < actElements.length; i++) {
             if(actElements[i].getAttribute('data-act-control-type') ==  controlType)
-                backgrounds.push(actElements[i]);
+                targetActElements.push(actElements[i]);
         }
-
-        var backgroundsZindex = {};
 
         var topZIndex = undefined;
 
-        for(var i = 0; i < backgrounds.length; i++) {
+        for(var i = 0; i < targetActElements.length; i++) {
             if(topZIndex == undefined)
-                topZIndex = backgrounds[i].style.zIndex;
+                topZIndex = targetActElements[i].style.zIndex;
 
-            if(backgrounds[i].style.zIndex > topZIndex) {
-                topZIndex = backgrounds[i].style.zIndex;
+            if(targetActElements[i].style.zIndex > topZIndex) {
+                topZIndex = targetActElements[i].style.zIndex;
             }
         }
 
