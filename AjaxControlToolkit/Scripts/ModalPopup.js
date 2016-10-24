@@ -60,6 +60,7 @@ Sys.Extended.UI.ModalPopupBehavior = function(element) {
     this._hidingAnimationEndedHandler = null;
     this._showingAnimationEndedHandler = null;
     this._zOrdering = null;
+    this._controlTypeName = 'modalPopupBackground';
 };
 
 Sys.Extended.UI.ModalPopupBehavior.prototype = {
@@ -173,7 +174,7 @@ Sys.Extended.UI.ModalPopupBehavior.prototype = {
         }
 
         this._backgroundElement = document.createElement('div');
-        this._backgroundElement.setAttribute('data-act-control-type', 'modalPopupBackground');
+        this._backgroundElement.setAttribute('data-act-control-type', this._controlTypeName);
         this._backgroundElement.id = this.get_id() + '_backgroundElement';
         this._backgroundElement.style.display = 'none';
         this._backgroundElement.style.position = 'fixed';
@@ -191,7 +192,7 @@ Sys.Extended.UI.ModalPopupBehavior.prototype = {
     },
 
     _setZIndex: function() {
-        var topModalPopupBackgroundZIndex = parseInt(this._zOrdering.findTopElement('modalPopupBackground'));
+        var topModalPopupBackgroundZIndex = parseInt(this._zOrdering.findTopElement(this._controlTypeName));
         // Want zIndex to big enough that the background sits above everything else
         // CSS 2.1 defines no bounds for the <integer> type, so pick arbitrarily
         this._backgroundElement.style.zIndex = topModalPopupBackgroundZIndex ? parseInt(topModalPopupBackgroundZIndex + 1) : parseInt(Sys.Extended.UI.zIndex.ModalPopupBackground);
