@@ -462,6 +462,9 @@
     <Content Include="Scripts\ValidatorCallout.min.js">
       <DependentUpon>ValidatorCallout.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\ZOrdering.min.js">
+      <DependentUpon>ZOrdering.js</DependentUpon>
+    </Content>
     <Content Include="Styles\README.txt" />
     <EmbeddedResource Include="Images\AsyncFileUpload.Button.png" />
     <EmbeddedResource Include="Images\BalloonPopup.CloudSprite.gif" />

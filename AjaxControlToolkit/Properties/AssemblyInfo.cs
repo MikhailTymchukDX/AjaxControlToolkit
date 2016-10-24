@@ -581,6 +581,9 @@ using System.Web.UI;
 [assembly: WebResource(Constants.ImageResourcePrefix + Constants.ValidatorCalloutAlertSmallImage, "image/gif")]
 [assembly: WebResource(Constants.ImageResourcePrefix + Constants.ValidatorCalloutCloseImage, "image/gif")]
 
+[assembly: WebResource(Constants.ZOrderingScriptName + Constants.DebugJsPostfix, "text/javascript", CdnPath = Constants.CdnScriptDebugPrefix + Constants.ZOrderingScriptName + Constants.DebugJsPostfix, CdnSupportsSecureConnection = true)]
+[assembly: WebResource(Constants.ZOrderingScriptName + Constants.JsPostfix, "text/javascript", CdnPath = Constants.CdnScriptReleasePrefix + Constants.ZOrderingScriptName + Constants.JsPostfix, CdnSupportsSecureConnection = true)]
+
 [assembly: WebResource(Constants.LocalizationScriptName + Constants.JsPostfix, "text/javascript", CdnPath = Constants.CdnScriptReleasePrefix + Constants.LocalizationScriptName + Constants.JsPostfix, CdnSupportsSecureConnection = true)]
 [assembly: WebResource(Constants.LocalizationScriptName + Constants.DebugJsPostfix, "text/javascript", CdnPath = Constants.CdnScriptDebugPrefix + Constants.LocalizationScriptName + Constants.DebugJsPostfix, CdnSupportsSecureConnection = true)]
 
