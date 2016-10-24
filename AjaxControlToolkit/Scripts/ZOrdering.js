@@ -27,9 +27,8 @@ Sys.Extended.UI.ZOrdering.prototype = {
             if(topZIndex == undefined)
                 topZIndex = targetActElements[i].style.zIndex;
 
-            if(targetActElements[i].style.zIndex > topZIndex) {
+            if(targetActElements[i].style.zIndex > topZIndex)
                 topZIndex = targetActElements[i].style.zIndex;
-            }
         }
 
         return topZIndex;
