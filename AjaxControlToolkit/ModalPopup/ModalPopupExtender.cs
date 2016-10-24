@@ -27,6 +27,7 @@ namespace AjaxControlToolkit {
     [RequiredScript(typeof(DragPanelExtender))]
     [RequiredScript(typeof(DropShadowExtender))]
     [RequiredScript(typeof(AnimationExtender))]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [TargetControlType(typeof(WebControl))]
     [TargetControlType(typeof(HtmlControl))]
     [TargetControlType(typeof(HiddenField))]

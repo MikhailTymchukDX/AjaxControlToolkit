@@ -59,7 +59,7 @@ Sys.Extended.UI.ModalPopupBehavior = function(element) {
     this._isAnimationJustEnded = false;
     this._hidingAnimationEndedHandler = null;
     this._showingAnimationEndedHandler = null;
-
+    this._zOrdering = null;
 };
 
 Sys.Extended.UI.ModalPopupBehavior.prototype = {
@@ -73,7 +73,7 @@ Sys.Extended.UI.ModalPopupBehavior.prototype = {
             this._dragHandleElement = $get(this._popupDragHandleControlID);
 
         this._popupElement = $get(this._popupControlID);
-
+        this._zOrdering = new Sys.Extended.UI.ZOrdering();
         this._createDomElements();
 
         this._showHandler = Function.createDelegate(this, this._onShow);
@@ -198,19 +198,8 @@ Sys.Extended.UI.ModalPopupBehavior.prototype = {
         this._foregroundElement.style.zIndex = parseInt($common.getCurrentStyle(this._backgroundElement, 'zIndex', this._backgroundElement.style.zIndex)) + 1;
     },
 
-    _getAllElementsWithAttribute: function(attribute) {
-        var matchingElements = [];
-        var allElements = document.getElementsByTagName('*');
-        for(var i = 0, n = allElements.length; i < n; i++) {
-            if(allElements[i].getAttribute(attribute) !== null) {
-                matchingElements.push(allElements[i]);
-            }
-        }
-        return matchingElements;
-    },
-
     _findTopModalPopupBackgroundZIndex: function() {
-        var actElements = this._getAllElementsWithAttribute("data-act-control-type");
+        var actElements = this._zOrdering.getAllElementsWithAttribute("data-act-control-type");
         var backgrounds = [];
 
         for(var i = 0; i < actElements.length; i++) {

@@ -67,6 +67,7 @@
     <Compile Include="CustomControlElement.cs" />
     <Compile Include="CustomControlsCollection.cs" />
     <Compile Include="EmbeddedScript.cs" />
+    <Compile Include="ExtenderBase\ZOrderingScripts.cs" />
     <Compile Include="ExtenderBase\IScriptComponentDescriptor.cs" />
     <Compile Include="ExtenderBase\ScriptComponentDescriptorWrapper.cs" />
     <Compile Include="MultiHandleSlider\MultiHandleSliderTargetsEditor.cs" />
@@ -457,6 +458,7 @@
     <EmbeddedResource Include="Styles\NumericUpDown.min.css">
       <DependentUpon>NumericUpDown.css</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Scripts\ZOrdering.js" />
     <Content Include="Scripts\ValidatorCallout.min.js">
       <DependentUpon>ValidatorCallout.js</DependentUpon>
     </Content>

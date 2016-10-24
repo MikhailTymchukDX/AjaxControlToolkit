@@ -36,6 +36,7 @@ namespace AjaxControlToolkit {
             DateTimeScriptName = "Common.DateTime",
             LocalizationScriptName = "Localization.Resources",
             ThreadingScriptName = "Common.Threading",
+            ZOrderingScriptName = "ZOrdering",
 
             AccordionName = "Accordion",
             AjaxFileUploadName = "AjaxFileUpload",
