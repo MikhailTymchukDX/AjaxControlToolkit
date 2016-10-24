@@ -174,7 +174,7 @@ Sys.Extended.UI.ModalPopupBehavior.prototype = {
         }
 
         this._backgroundElement = document.createElement('div');
-        this._backgroundElement.setAttribute('data-act-control-type', this._controlTypeName);
+        this._backgroundElement.setAttribute(this._zOrdering.getControlTypeAttributeName(), this._controlTypeName);
         this._backgroundElement.id = this.get_id() + '_backgroundElement';
         this._backgroundElement.style.display = 'none';
         this._backgroundElement.style.position = 'fixed';

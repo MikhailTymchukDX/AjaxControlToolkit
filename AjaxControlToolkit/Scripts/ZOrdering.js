@@ -2,6 +2,10 @@
 };
 
 Sys.Extended.UI.ZOrdering.prototype = {
+    getControlTypeAttributeName: function(){
+        return 'data-act-control-type';
+    },
+
     getAllElementsWithAttribute: function (attribute) {
         var matchingElements = [];
         var allElements = document.getElementsByTagName('*');
@@ -13,11 +17,11 @@ Sys.Extended.UI.ZOrdering.prototype = {
     },
 
     findTopElement: function (controlType) {
-        var actElements = this.getAllElementsWithAttribute('data-act-control-type');
+        var actElements = this.getAllElementsWithAttribute(this.getControlTypeAttributeName());
         var targetActElements = [];
 
         for(var i = 0; i < actElements.length; i++) {
-            if(actElements[i].getAttribute('data-act-control-type') ==  controlType)
+            if(actElements[i].getAttribute(this.getControlTypeAttributeName()) == controlType)
                 targetActElements.push(actElements[i]);
         }
 
