@@ -22,7 +22,7 @@ Sys.Extended.UI.ZOrdering.prototype = {
 
         for(var i = 0; i < actOrderableElements.length; i++) {
             if(topZIndex == undefined)
-                topZIndex = actOrderableElements[i].style.zIndex;
+                topZIndex = actOrderableElements[i].style.zIndex || 0;
 
             if(actOrderableElements[i].style.zIndex > topZIndex)
                 topZIndex = actOrderableElements[i].style.zIndex;
