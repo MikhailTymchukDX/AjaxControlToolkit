@@ -13,6 +13,7 @@ namespace AjaxControlToolkit {
     [ClientScriptResource("Sys.Extended.UI.DragDropWatcher", Constants.DropWatcherName)]
     [RequiredScript(typeof(DragDropScripts))]
     [RequiredScript(typeof(CommonToolkitScripts))]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [TargetControlType(typeof(BulletedList))]
     public class DropWatcherExtender : ExtenderControlBase {
 

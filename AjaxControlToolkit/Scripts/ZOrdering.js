@@ -32,7 +32,11 @@ Sys.Extended.UI.ZOrdering.prototype = {
     },
 
     getTopZIndex: function (defaultZIndex) {
-        var topZIndex = parseInt(this._findTopElement());
-        return topZIndex ? parseInt(topZIndex + 1) : parseInt(defaultZIndex);
+        var topZIndex = this._findTopElement();
+
+        if(topZIndex == undefined)
+            return defaultZIndex;
+        
+        return parseInt(topZIndex) + 1;
     }
 };
