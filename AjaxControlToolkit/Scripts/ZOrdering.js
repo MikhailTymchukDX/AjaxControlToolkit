@@ -2,11 +2,11 @@
 };
 
 Sys.Extended.UI.ZOrdering.prototype = {
-    getControlTypeAttributeName: function(){
+    getControlTypeAttributeName: function () {
         return 'data-act-control-type';
     },
 
-    getAllElementsWithAttribute: function (attribute) {
+    getElementsWithAttribute: function (attribute) {
         var matchingElements = [];
         var allElements = document.getElementsByTagName('*');
         for(var i = 0, n = allElements.length; i < n; i++) {
@@ -16,23 +16,16 @@ Sys.Extended.UI.ZOrdering.prototype = {
         return matchingElements;
     },
 
-    findTopElement: function (controlType) {
-        var actElements = this.getAllElementsWithAttribute(this.getControlTypeAttributeName());
-        var targetActElements = [];
-
-        for(var i = 0; i < actElements.length; i++) {
-            if(actElements[i].getAttribute(this.getControlTypeAttributeName()) == controlType)
-                targetActElements.push(actElements[i]);
-        }
-
+    findTopElement: function () {
+        var actOrderableElements = this.getElementsWithAttribute(this.getControlTypeAttributeName());
         var topZIndex = undefined;
 
-        for(var i = 0; i < targetActElements.length; i++) {
+        for(var i = 0; i < actOrderableElements.length; i++) {
             if(topZIndex == undefined)
-                topZIndex = targetActElements[i].style.zIndex;
+                topZIndex = actOrderableElements[i].style.zIndex;
 
-            if(targetActElements[i].style.zIndex > topZIndex)
-                topZIndex = targetActElements[i].style.zIndex;
+            if(actOrderableElements[i].style.zIndex > topZIndex)
+                topZIndex = actOrderableElements[i].style.zIndex;
         }
 
         return topZIndex;

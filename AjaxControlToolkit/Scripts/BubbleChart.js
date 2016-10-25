@@ -244,8 +244,8 @@ Sys.Extended.UI.BubbleChart.prototype = {
     },
 
     _getTooltipZIndex: function() {
-        var topTooltipZIndex = parseInt(this._zOrdering.findTopElement(this._controlTypeName));
-        return topTooltipZIndex ? parseInt(topTooltipZIndex + 1) : parseInt(Sys.Extended.UI.zIndex.BubbleChartTooltip);
+        var topZIndex = parseInt(this._zOrdering.findTopElement());
+        return topZIndex ? parseInt(topZIndex + 1) : parseInt(Sys.Extended.UI.zIndex.BubbleChartTooltip);
     },
 
     generateBubbleChart: function() {
