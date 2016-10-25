@@ -240,7 +240,7 @@ Sys.Extended.UI.BubbleChart.prototype = {
             }
         }, this._parentDiv);
 
-        this._divTooltip.setAttribute(this._zOrdering.getControlTypeAttributeName(), this._orderableElementType);
+        this._divTooltip.setAttribute(this._zOrdering.getOrderableElementAttributeName(), this._orderableElementType);
     },
 
     _getTooltipZIndex: function() {

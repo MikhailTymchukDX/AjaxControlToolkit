@@ -2,8 +2,8 @@
 };
 
 Sys.Extended.UI.ZOrdering.prototype = {
-    getControlTypeAttributeName: function () {
-        return 'data-act-orderable-element-type';
+    getOrderableElementAttributeName: function () {
+        return 'data-act-orderable-element';
     },
 
     getElementsWithAttribute: function (attribute) {
@@ -17,7 +17,7 @@ Sys.Extended.UI.ZOrdering.prototype = {
     },
 
     findTopElement: function () {
-        var actOrderableElements = this.getElementsWithAttribute(this.getControlTypeAttributeName());
+        var actOrderableElements = this.getElementsWithAttribute(this.getOrderableElementAttributeName());
         var topZIndex = undefined;
 
         for(var i = 0; i < actOrderableElements.length; i++) {
