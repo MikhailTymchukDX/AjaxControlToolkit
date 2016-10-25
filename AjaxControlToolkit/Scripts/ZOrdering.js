@@ -3,7 +3,7 @@
 
 Sys.Extended.UI.ZOrdering.prototype = {
     getControlTypeAttributeName: function () {
-        return 'data-act-control-type';
+        return 'data-act-orderable-element-type';
     },
 
     getElementsWithAttribute: function (attribute) {

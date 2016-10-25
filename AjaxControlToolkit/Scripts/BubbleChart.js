@@ -186,7 +186,7 @@ Sys.Extended.UI.BubbleChart = function(element) {
     this.charLength = 3.5;
     this._divTooltip = null;
     this._zOrdering = null;
-    this._controlTypeName = 'bubbleChartTooltip';
+    this._orderableElementType = 'bubbleChartTooltip';
 }
 
 Sys.Extended.UI.BubbleChart.prototype = {
@@ -240,7 +240,7 @@ Sys.Extended.UI.BubbleChart.prototype = {
             }
         }, this._parentDiv);
 
-        this._divTooltip.setAttribute(this._zOrdering.getControlTypeAttributeName(), this._controlTypeName);
+        this._divTooltip.setAttribute(this._zOrdering.getControlTypeAttributeName(), this._orderableElementType);
     },
 
     _getTooltipZIndex: function() {
