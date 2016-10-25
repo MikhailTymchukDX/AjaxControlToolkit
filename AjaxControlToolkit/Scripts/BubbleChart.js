@@ -234,18 +234,13 @@ Sys.Extended.UI.BubbleChart.prototype = {
                     top: '0px',
                     color: this._tooltipFontColor,
                     visibility: 'hidden',
-                    zIndex: this._getTooltipZIndex(),
+                    zIndex: this._zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.BubbleChartTooltip),
                     padding: '10px'
                 }
             }
         }, this._parentDiv);
 
         this._divTooltip.setAttribute(this._zOrdering.getOrderableElementAttributeName(), this._orderableElementType);
-    },
-
-    _getTooltipZIndex: function() {
-        var topZIndex = parseInt(this._zOrdering.findTopElement());
-        return topZIndex ? parseInt(topZIndex + 1) : parseInt(Sys.Extended.UI.zIndex.BubbleChartTooltip);
     },
 
     generateBubbleChart: function() {

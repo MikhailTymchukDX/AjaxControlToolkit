@@ -276,7 +276,7 @@ Sys.Extended.UI.ComboBox.prototype = {
         // option list is originally display-none to force inline rendering
         style.display = 'block';
         optionListControl.setAttribute(this._zOrdering.getOrderableElementAttributeName(), this._orderableElementType);
-        style.zIndex = this._getOptionListZIndex();
+        style.zIndex = this._zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.ComboBoxList);
 
         // build an array of list items
         this._optionListItems = new Array();
@@ -356,11 +356,6 @@ Sys.Extended.UI.ComboBox.prototype = {
         this._popupShowing();
         optionListControl.style.display = "none";
 
-    },
-
-    _getOptionListZIndex: function () {
-        var topZIndex = parseInt(this._zOrdering.findTopElement());
-        return topZIndex ? parseInt(topZIndex + 1) : parseInt(Sys.Extended.UI.zIndex.ComboBoxList);
     },
 
     initializeOptionListItem: function (liElement) {

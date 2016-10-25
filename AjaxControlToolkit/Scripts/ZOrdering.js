@@ -6,7 +6,7 @@ Sys.Extended.UI.ZOrdering.prototype = {
         return 'data-act-orderable-element';
     },
 
-    getElementsWithAttribute: function (attribute) {
+    _getElementsWithAttribute: function (attribute) {
         var matchingElements = [];
         var allElements = document.getElementsByTagName('*');
         for(var i = 0, n = allElements.length; i < n; i++) {
@@ -16,8 +16,8 @@ Sys.Extended.UI.ZOrdering.prototype = {
         return matchingElements;
     },
 
-    findTopElement: function () {
-        var actOrderableElements = this.getElementsWithAttribute(this.getOrderableElementAttributeName());
+    _findTopElement: function () {
+        var actOrderableElements = this._getElementsWithAttribute(this.getOrderableElementAttributeName());
         var topZIndex = undefined;
 
         for(var i = 0; i < actOrderableElements.length; i++) {
@@ -29,5 +29,10 @@ Sys.Extended.UI.ZOrdering.prototype = {
         }
 
         return topZIndex;
+    },
+
+    getTopZIndex: function (defaultZIndex) {
+        var topZIndex = parseInt(this._findTopElement());
+        return topZIndex ? parseInt(topZIndex + 1) : parseInt(defaultZIndex);
     }
 };
