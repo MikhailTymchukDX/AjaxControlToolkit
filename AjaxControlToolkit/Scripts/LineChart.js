@@ -66,7 +66,7 @@ Sys.Extended.UI.LineChart.prototype = {
         Sys.Extended.UI.LineChart.callBaseMethod(this, "dispose");
     },
 
-    generateTooltipDiv: function () {
+    generateTooltipDiv: function() {
         var zOrdering = new Sys.Extended.UI.ZOrdering();
 
         this._divTooltip = $common.createElementFromTemplate({
