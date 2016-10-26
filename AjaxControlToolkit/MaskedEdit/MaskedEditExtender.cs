@@ -22,6 +22,7 @@ namespace AjaxControlToolkit {
     [ClientScriptResource("Sys.Extended.UI.MaskedEditBehavior", Constants.MaskedEditName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [RequiredScript(typeof(TimerScript))]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [TargetControlType(typeof(TextBox))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.MaskedEditName + Constants.IconPostfix)]
     public class MaskedEditExtender : ExtenderControlBase {

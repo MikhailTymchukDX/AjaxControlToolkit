@@ -664,7 +664,9 @@ Sys.Extended.UI.MaskedEditBehavior.prototype = {
             DivTp.style.position = "absolute";
             DivTp.style.left = mousepos.x + 2 /* offset */ + "px";
             DivTp.style.top = mousepos.y + 2 /* offset */ + "px";
-            DivTp.style.zIndex = Sys.Extended.UI.zIndex.MaskedEditDivTip;
+            var zOrdering = new Sys.Extended.UI.ZOrdering();
+            DivTp.style.zIndex = zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.MaskedEditDivTip);
+            DivTp.setAttribute(zOrdering.getOrderableElementAttributeName(), 'maskedEditDivTip');
 
             if(this._cssMessageErrorFloat == "") {
                 DivTp.style.padding = "3px 3px 3px 3px";
