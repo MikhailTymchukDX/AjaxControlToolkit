@@ -27,6 +27,7 @@ namespace AjaxControlToolkit {
     [RequiredScript(typeof(DragDropScripts))]
     [RequiredScript(typeof(AnimationScripts))]
     [RequiredScript(typeof(TimerScript))]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [TargetControlType(typeof(TextBox))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.SliderName + Constants.IconPostfix)]
     public class SliderExtender : ExtenderControlBase {
