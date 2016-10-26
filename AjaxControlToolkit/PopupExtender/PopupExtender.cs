@@ -12,6 +12,7 @@ namespace AjaxControlToolkit {
     [ClientScriptResource("Sys.Extended.UI.PopupBehavior", Constants.PopupName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [RequiredScript(typeof(AnimationExtender))]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [TargetControlType(typeof(WebControl))]
     [TargetControlType(typeof(HtmlControl))]
     [ToolboxItem(false)]
