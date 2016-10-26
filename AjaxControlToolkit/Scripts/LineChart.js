@@ -67,7 +67,7 @@ Sys.Extended.UI.LineChart.prototype = {
     },
 
     generateTooltipDiv: function () {
-        var zOrdering = new new Sys.Extended.UI.ZOrdering(); 
+        var zOrdering = new Sys.Extended.UI.ZOrdering(); 
 
         this._divTooltip = $common.createElementFromTemplate({
             nodeName: 'div',

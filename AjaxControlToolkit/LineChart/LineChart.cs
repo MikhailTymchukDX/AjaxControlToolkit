@@ -17,6 +17,7 @@ namespace AjaxControlToolkit {
     /// and above. This control can display two types of LineCharts: Basic and Stacked.
     /// </summary>
     [ClientCssResource(Constants.LineChartName)]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [ClientScriptResource("Sys.Extended.UI.LineChart", Constants.LineChartName)]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.LineChartName + Constants.IconPostfix)]
     public class LineChart : ChartBase {
