@@ -216,7 +216,7 @@ Sys.Extended.UI.BubbleChart.prototype = {
         Sys.Extended.UI.BubbleChart.callBaseMethod(this, "dispose");
     },
 
-    generateTooltipDiv: function () {
+    generateTooltipDiv: function() {
         var zOrdering = new Sys.Extended.UI.ZOrdering();
 
         this._divTooltip = $common.createElementFromTemplate({
