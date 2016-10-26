@@ -66,7 +66,9 @@ Sys.Extended.UI.LineChart.prototype = {
         Sys.Extended.UI.LineChart.callBaseMethod(this, "dispose");
     },
 
-    generateTooltipDiv: function() {
+    generateTooltipDiv: function () {
+        var zOrdering = new new Sys.Extended.UI.ZOrdering(); 
+
         this._divTooltip = $common.createElementFromTemplate({
             nodeName: 'div',
             properties: {
@@ -81,11 +83,13 @@ Sys.Extended.UI.LineChart.prototype = {
                     top: '0px',
                     color: this._tooltipFontColor,
                     visibility: 'hidden',
-                    zIndex: Sys.Extended.UI.zIndex.LineChartTooltip,
+                    zIndex: zOrdering.getTopZIndex(Sys.Extended.UI.LineChartTooltip),
                     padding: '10px'
                 }
             }
         }, this._parentDiv);
+
+        this._divTooltip.setAttribute(zOrdering.getOrderableElementAttributeName(), 'lineChartTooltip');
     },
 
     generateLineChart: function() {
