@@ -50,13 +50,14 @@ Sys.Extended.UI.PasswordStrengthExtenderBehavior = function(element) {
 
     this._minLowerCaseChars = 0;
     this._minUpperCaseChars = 0;
+    this._zOrdering = null;
 }
 
 Sys.Extended.UI.PasswordStrengthExtenderBehavior.prototype = {
 
     initialize: function() {
         Sys.Extended.UI.PasswordStrengthExtenderBehavior.callBaseMethod(this, 'initialize');
-
+        this._zOrdering = new Sys.Extended.UI.ZOrdering();
         this._createIndicatorDisplayElement();
 
         var e = this.get_element();
@@ -136,9 +137,8 @@ Sys.Extended.UI.PasswordStrengthExtenderBehavior.prototype = {
         p.style.position = "absolute";
         p.style.visibility = "hidden";
         p.style.display = "none";
-        var zOrdering = new Sys.Extended.UI.ZOrdering();
-        p.style.zIndex = zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.PasswordStrengthTextDisplay);
-        p.setAttribute(zOrdering.getOrderableElementAttributeName(), 'passwordStrengthTextDisplay');
+        p.style.zIndex = this._zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.PasswordStrengthTextDisplay);
+        p.setAttribute(this._zOrdering.getOrderableElementAttributeName(), 'passwordStrengthTextDisplay');
 
         // Create the control id        
         if(this.get_element().id)
@@ -387,6 +387,7 @@ Sys.Extended.UI.PasswordStrengthExtenderBehavior.prototype = {
         } else {
             this._createTextDescriptions(this._txtStrengthDescriptions);
 
+            this._displayDiv.style.zIndex = this._zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.PasswordStrengthTextDisplay);
             $common.setVisible(this._displayDiv, true);
 
             var index = parseInt(pwdStrength / 100 * (this._levelArray.length - 1)),

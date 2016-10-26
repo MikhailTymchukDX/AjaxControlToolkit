@@ -13,7 +13,7 @@
     <asp:Panel runat="server" ID="PopupPanel">
         <asp:TextBox runat="server" 
             ID="PasswordTextBox" />
-        <act:PasswordStrength runat="server" TargetControlID="PasswordTextBox" />
+        <act:PasswordStrength ID="TestExtender" runat="server" TargetControlID="PasswordTextBox" />
     </asp:Panel>
 
     <act:ModalPopupExtender runat="server" 
@@ -24,19 +24,23 @@
     <script>
         describe("PasswordStrength", function() {
 
-            var PASSWORD_TEXTBOX_CLIENT_ID = "<%= PasswordTextBox.ClientID %>",
+            var PASSWORD_STRENGTH_CLIENT_ID = "<%= TestExtender.ClientID %>",
+                PASSWORD_TEXTBOX_CLIENT_ID = "<%= PasswordTextBox.ClientID %>",
                 PASSWORD_STRENGTH_LABEL_CLIENT_ID = PASSWORD_TEXTBOX_CLIENT_ID + "_PasswordStrength",
                 MODAL_POPUP_EXTENDER_CLIENT_ID = "<%= TestModalPopup.ClientID %>";
 
             beforeEach(function() {
                 this.$passwordTextBox = $(PASSWORD_TEXTBOX_CLIENT_ID.toIdSelector());
                 this.$passwordStrengthLabel = $(PASSWORD_STRENGTH_LABEL_CLIENT_ID.toIdSelector());
+                this.passwordBehavior = $find(PASSWORD_STRENGTH_CLIENT_ID);
 
                 this.modalPopupExtender = $find(MODAL_POPUP_EXTENDER_CLIENT_ID);
                 this.$modalPopupBackground = $(this.modalPopupExtender._backgroundElement);
             });
 
-            it("displays text over modal popup", function() {
+            it("displays text over modal popup", function () {
+                this.modalPopupExtender.show();
+                this.passwordBehavior._showStrength();
                 expect(this.$passwordStrengthLabel.zIndex()).toBeGreaterThanOrEqualTo(this.$modalPopupBackground.zIndex());
             });
         });
