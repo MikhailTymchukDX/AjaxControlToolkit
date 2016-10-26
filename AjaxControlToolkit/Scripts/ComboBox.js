@@ -355,7 +355,6 @@ Sys.Extended.UI.ComboBox.prototype = {
         optionListControl.style.display = "none";
 
     },
-
     initializeOptionListItem: function (liElement) {
 
         // ensure empty text appears in the list
