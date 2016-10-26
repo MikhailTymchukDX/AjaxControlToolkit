@@ -185,8 +185,6 @@ Sys.Extended.UI.BubbleChart = function(element) {
     this.yInterval = 0;
     this.charLength = 3.5;
     this._divTooltip = null;
-    this._zOrdering = null;
-    this._orderableElementType = 'bubbleChartTooltip';
 }
 
 Sys.Extended.UI.BubbleChart.prototype = {
@@ -210,7 +208,6 @@ Sys.Extended.UI.BubbleChart.prototype = {
             this._bubbleSizes = 5;
         }
 
-        this._zOrdering = new Sys.Extended.UI.ZOrdering();
         this.generateTooltipDiv();
         this.generateBubbleChart();
     },
@@ -219,7 +216,9 @@ Sys.Extended.UI.BubbleChart.prototype = {
         Sys.Extended.UI.BubbleChart.callBaseMethod(this, "dispose");
     },
 
-    generateTooltipDiv: function() {
+    generateTooltipDiv: function () {
+        var zOrdering = new Sys.Extended.UI.ZOrdering();
+
         this._divTooltip = $common.createElementFromTemplate({
             nodeName: 'div',
             properties: {
@@ -234,13 +233,13 @@ Sys.Extended.UI.BubbleChart.prototype = {
                     top: '0px',
                     color: this._tooltipFontColor,
                     visibility: 'hidden',
-                    zIndex: this._zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.BubbleChartTooltip),
+                    zIndex: zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.BubbleChartTooltip),
                     padding: '10px'
                 }
             }
         }, this._parentDiv);
 
-        this._divTooltip.setAttribute(this._zOrdering.getOrderableElementAttributeName(), this._orderableElementType);
+        this._divTooltip.setAttribute(zOrdering.getOrderableElementAttributeName(), 'bubbleChartTooltip');
     },
 
     generateBubbleChart: function() {

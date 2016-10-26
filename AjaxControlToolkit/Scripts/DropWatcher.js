@@ -37,8 +37,6 @@ Sys.Extended.UI.DragDropList = function(associatedElement) {
 
     this._currentContext = null;
     this._data = null;
-    this._zOrdering = null;
-    this._orderableElementType = 'dropWatcherDragVisual';
 }
 
 Sys.Extended.UI.DragDropList.IsValidDataType = function(dataType) {
@@ -100,7 +98,7 @@ Sys.Extended.UI.DragDropList.prototype = {
         this._originalZIndex = this._dragVisual.style.zIndex;
         var zOrdering = new Sys.Extended.UI.ZOrdering();
         this._dragVisual.style.zIndex = zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.DropWatcherDragVisual);
-        this._dragVisual.setAttribute(zOrdering.getOrderableElementAttributeName(), this._orderableElementType);
+        this._dragVisual.setAttribute(zOrdering.getOrderableElementAttributeName(), 'dropWatcherDragVisual');
 
         this._originalParent = this._dragVisual.parentNode;
         this._originalNextSibling = Sys.Extended.UI.DragDropManager._getInstance().getNextSibling(this._dragVisual);

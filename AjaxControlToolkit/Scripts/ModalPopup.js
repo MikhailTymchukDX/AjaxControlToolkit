@@ -60,7 +60,6 @@ Sys.Extended.UI.ModalPopupBehavior = function(element) {
     this._hidingAnimationEndedHandler = null;
     this._showingAnimationEndedHandler = null;
     this._zOrdering = null;
-    this._orderableElementType = 'modalPopupBackground';
 };
 
 Sys.Extended.UI.ModalPopupBehavior.prototype = {
@@ -174,7 +173,7 @@ Sys.Extended.UI.ModalPopupBehavior.prototype = {
         }
 
         this._backgroundElement = document.createElement('div');
-        this._backgroundElement.setAttribute(this._zOrdering.getOrderableElementAttributeName(), this._orderableElementType);
+        this._backgroundElement.setAttribute(this._zOrdering.getOrderableElementAttributeName(), 'modalPopupBackground');
         this._backgroundElement.id = this.get_id() + '_backgroundElement';
         this._backgroundElement.style.display = 'none';
         this._backgroundElement.style.position = 'fixed';

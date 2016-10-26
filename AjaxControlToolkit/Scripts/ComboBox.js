@@ -59,8 +59,6 @@ Sys.Extended.UI.ComboBox = function (element) {
     this._optionListItemHeight = null;
     this._optionListHeight = null;
     this._optionListWidth = null;
-    this._zOrdering = null;
-    this._orderableElementType = "comboBoxOptionList";
 
     this.clearDelegates();
 
@@ -83,7 +81,6 @@ Sys.Extended.UI.ComboBox.prototype = {
         this.createDelegates();
         this.initializeTextBox();
         this.initializeButton();
-        this._zOrdering = new Sys.Extended.UI.ZOrdering();
         this.initializeOptionList();
         this.addHandlers();
         if (hiddenParent != null) {
@@ -275,8 +272,9 @@ Sys.Extended.UI.ComboBox.prototype = {
 
         // option list is originally display-none to force inline rendering
         style.display = 'block';
-        optionListControl.setAttribute(this._zOrdering.getOrderableElementAttributeName(), this._orderableElementType);
-        style.zIndex = this._zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.ComboBoxList);
+        var zOrdering = new Sys.Extended.UI.ZOrdering();
+        optionListControl.setAttribute(zOrdering.getOrderableElementAttributeName(), 'comboBoxOptionList');
+        style.zIndex = zOrdering.getTopZIndex(Sys.Extended.UI.zIndex.ComboBoxList);
 
         // build an array of list items
         this._optionListItems = new Array();
