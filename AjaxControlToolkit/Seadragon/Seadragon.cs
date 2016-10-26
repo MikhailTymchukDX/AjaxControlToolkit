@@ -13,6 +13,7 @@ namespace AjaxControlToolkit {
     /// Use the mouse to pan and zoom around an image.
     /// </summary>
     [ClientScriptResource("Sys.Extended.UI.Seadragon.Viewer", Constants.SeadragonName)]
+    [RequiredScript(typeof(ZOrderingScripts))]
     [ToolboxData("<{0}:Seadragon runat=server></{0}:Seadragon>")]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.SeadragonName + Constants.IconPostfix)]
     public class Seadragon : ScriptControlBase {
