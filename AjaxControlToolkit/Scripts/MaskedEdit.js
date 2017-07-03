@@ -569,6 +569,9 @@ Sys.Extended.UI.MaskedEditBehavior.prototype = {
         if(scancode == 13)  //enter 
             return true;
 
+        if(scancode == 229) // mobile Chrome sends 229 instead of 8
+            scancode = 8;
+
         if(!this._isNormalChar(evt, scancode)) {
             this._ExecuteNav(evt, scancode);
         } else {
