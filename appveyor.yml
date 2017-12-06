@@ -21,8 +21,8 @@ cache:
 
 services: iis
   
-before_build:
-  - nuget restore
+before_build:  
+  - nuget restore  
 
 build:
   project: AjaxControlToolkit.sln
@@ -30,16 +30,17 @@ build:
   
 before_test:
   - powershell -File AppVeyor\DeployJasmineSite.ps1
-  
+  - ps: Start-Process FfmpegRunner.exe -PassThru
+
 test_script: 
-  - cd AjaxControlToolkit\Scripts && eslint .
-  - nunit3-console "bin\Debug\AjaxControlToolkit.Tests.dll"
+  - runtest.cmd
 
 after_test:
   - msbuild AjaxControlToolkit.sln /p:Configuration=Release /v:m /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
   - powershell -File AppVeyor\CreateArtifacts.ps1
-
+ 
 artifacts:
+  - path: output.mkv
   - path: AjaxControlToolkit-build-*.zip
   - path: AjaxControlToolkit.StaticResources-build-*.zip
   - path: AjaxControlToolkit.HtmlEditor.Sanitizer-build-*.zip
