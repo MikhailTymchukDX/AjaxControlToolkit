@@ -13,7 +13,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AjaxControlToolkit {
+namespace AjaxControlToolkit
 
     /// <summary>
     /// The Accordion control represents a series of panes that can be viewed
