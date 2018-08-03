@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.IO;
 using System.Net;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
-using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -115,6 +111,7 @@ namespace AjaxControlToolkit.Reference.Controllers {
         }
 
         private WebResponse GetResponse(string url) {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.UserAgent = "Foo";
             request.Accept = "application/json";
